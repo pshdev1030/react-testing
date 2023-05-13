@@ -38,6 +38,33 @@ https://github.com/testing-library/jest-dom
 
 callback에서 에러를 반환하지 않으면 테스트 성공
 
+## describe(string,callback)
+
+여러 테스트를 한 번에 할 수 있음
+
+## command\[All\]ByQueryType
+
+command
+
+- get : expect element to be in DOM
+- query : expect element not to be in DOM
+- find : expect element to appear async
+
+\[All\]
+
+- exclude : expect only one match
+- include : expect more than one match
+
+QueryType
+
+- Role(most preferred)
+- AltText(images)
+- Text(display elements)
+- Form elements
+  - PlaceholderText
+  - LabelText
+  - DisplayValue
+
 ## 느낀점
 
 케이스 별로 테스트 하자
