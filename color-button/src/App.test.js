@@ -35,13 +35,23 @@ test("when checkbox is checked, button should be disabled", () => {
   const checkbox = screen.getByRole("checkbox");
   const colorButton = screen.getByRole("button", { name: "Change to blue" });
 
-  //check if the button is enabled when the check box is unchecked
-  expect(checkbox).not.toBeChecked();
-  expect(colorButton).toBeEnabled();
+  // //check if the button is enabled when the check box is unchecked
+  // expect(checkbox).not.toBeChecked();
+  // expect(colorButton).toBeEnabled();
+
+  // fireEvent.click(checkbox);
+
+  // //check if the button is disabled when the check box is checked
+  // expect(checkbox).toBeChecked();
+  // expect(colorButton).not.toBeEnabled();
+
+  // initial condition에 대한 검사는 위에서 했기 때문에 안 해도 된다.
+  // 때문에 다음과 같이 수정 가능함
 
   fireEvent.click(checkbox);
+  expect(colorButton).toBeDisabled();
 
-  //check if the button is disabled when the check box is checked
-  expect(checkbox).toBeChecked();
-  expect(colorButton).not.toBeEnabled();
+  //이벤트를 다시 Trigger해서 원래 상태로 돌아오는지도 검사
+  fireEvent.click(checkbox);
+  expect(colorButton).toBeEnabled();
 });
