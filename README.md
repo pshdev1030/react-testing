@@ -48,7 +48,7 @@ command
 
 - get : expect element to be in DOM
 - query : expect element not to be in DOM
-- find : expect element to appear async
+- find : expect element to appear async (서버에서 데이터 받아와서 그릴 때 테스트)
 
 \[All\]
 
@@ -76,3 +76,9 @@ QueryType
 ## 궁금한 점
 
 테스트코드를 위한 함수를 작성하는 것이 생산성을 향상시켜줄 것 같은데, 실제론 어떨까?
+
+## MSW
+
+```bash
+npm i msw
+```
